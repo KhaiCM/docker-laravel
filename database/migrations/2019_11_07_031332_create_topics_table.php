@@ -20,6 +20,7 @@ class CreateTopicsTable extends Migration
             $table->text('body');
             $table->integer('views')->default(0);
             $table->timestamps();
+            
             $table->foreign('category_id')
             ->references('id')->on('categories')
             ->onDelete('cascade');

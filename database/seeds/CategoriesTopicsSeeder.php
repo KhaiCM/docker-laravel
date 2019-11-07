@@ -13,8 +13,8 @@ class CategoriesTopicsSeeder extends Seeder
      */
     public function run()
     {
-        Topic::truncate();
-	    Category::truncate();
+     //    Topic::truncate();
+	    // Category::truncate();
 
 	    factory(Category::class, 5)->create()->each(function($c) {
 	        $c->topics()->saveMany(

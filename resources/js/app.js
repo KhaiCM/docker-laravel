@@ -5,12 +5,17 @@
  */
 
 require('./bootstrap');
+require('./frontend/js/jquery.plugin.min.js');
 
 window.Vue = require('vue');
 import VueRouter from 'vue-router';
 import App from './components/App';
+import fromNow from './filters/timeFilter';
+import largeNumber from './filters/largeNumber'
 
 window.Vue.use(VueRouter);
+window.Vue.filter('fromNow', fromNow);
+window.Vue.filter('largeNumber', largeNumber);
 
 // Views
 import CompaniesIndex from './components/companies/CompaniesIndex.vue';
@@ -27,7 +32,7 @@ import NotFound from './components/NotFound.vue'
 
 const routes = [
     {
-        path: '/',
+        path: '/companies',
         components: {
             companiesIndex: CompaniesIndex
         }
@@ -40,8 +45,8 @@ const routes = [
     		blogIndex: BLogIndex},
     },
     { path: '/homeview', name: 'Home', component: HomeView },
-    { path: '/category', name: 'Category', component: CategoryView },
-    { path: '/topic', name: 'Topci', component: TopicView },
+    { path: '/category/:categoryId', name: 'Category', component: CategoryView },
+    { path: '/topic', name: 'Topic', component: TopicView },
     { path: '*', component: NotFound }
 ]
 

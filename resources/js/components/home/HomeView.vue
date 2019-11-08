@@ -1,20 +1,23 @@
 <template>
   <div>
-    Trang chủ
+    <category v-for="(category, index) in categories" :category="category" :index="index" :key="category.id"></category>
   </div>
 </template>
 <script>
-export default {
-  data () {
-    return {
-      categories: []
-    }
-  },
+  import Category from '../Category.vue';
+  export default {
 
-  mounted () {
-    axios.get('api/categories').then((response) => {
-        this.categories = response.data;
-    })
+    components: { Category },
+
+    data () {
+      return {
+        categories: []
+      }
+    },
+    mounted () {
+      axios.get('http://127.0.0.1:8000/api/categories/').then((response) => {
+            this.categories = response.data
+        })
+    }
   }
-}
 </script>

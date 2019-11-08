@@ -9,7 +9,7 @@ use App\Comment;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(App\User::class, function (Faker $faker) {
     static $password;
 
     return [
@@ -20,14 +20,14 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Category::class, function (Faker\Generator $faker) {
+$factory->define(App\Category::class, function (Faker$faker) {
     return [
         'name' => implode(' ', $faker->words(2)),
         'description' => $faker->sentence(),
     ];
 });
 
-$factory->define(App\Topic::class, function (Faker\Generator $faker) {
+$factory->define(App\Topic::class, function (Faker $faker) {
     return [
         'category_id' => null,
         'user_id' => 1,
@@ -38,7 +38,7 @@ $factory->define(App\Topic::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Comment::class, function (Faker\Generator $faker) {
+$factory->define(App\Comment::class, function (Faker $faker) {
     return [
         'topic_id' => 1,
         'user_id' => 1,

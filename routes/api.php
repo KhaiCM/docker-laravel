@@ -21,3 +21,6 @@ Route::group(['prefix' => '/v1', 'namespace' => 'Api\V1', 'as' => 'api.'], funct
 	Route::resource('companies', 'CompaniesController', ['except' => ['create', 'edit']]);
 	Route::resource('blog', 'BlogsController', ['except' => ['create', 'edit']]);
 });
+
+Route::get('categories', 'CategoryController@index');
+Route::get('categories/{id}/topics', 'CategoryController@topics');

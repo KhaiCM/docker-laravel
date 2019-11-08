@@ -23,4 +23,5 @@ Route::group(['prefix' => '/v1', 'namespace' => 'Api\V1', 'as' => 'api.'], funct
 });
 
 Route::get('categories', 'CategoryController@index');
-Route::get('categories/{id}/topics', 'CategoryController@topics');
+Route::get('categories/{id}', 'CategoryController@show');
+Route::get('categories/{id}/topics', 'CategoryController@topics')->name('topic.index');

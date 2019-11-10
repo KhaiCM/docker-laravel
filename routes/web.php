@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
@@ -23,6 +23,11 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::get('companies', 'CompaniesController@index')->name('companies.index');
     Route::get('blog', 'BlogController@index')->name('blog.index');
 });
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/vato', 'VatoController@index')->name('vato.index');
+});
+
 
 Route::any('{all}', function () {
     return view('welcome');

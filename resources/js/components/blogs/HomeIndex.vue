@@ -1,23 +1,6 @@
 <template>
 	<div class="main-container">
-		<header class="page-header">
-			<div class="background-image-holder parallax-background">
-				<img class="background-image" alt="Background Image" src="img/hero23.jpg">
-			</div>
-				
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12 text-center">
-						<span class="text-white alt-font">news &amp; Views&nbsp;</span>
-						<h1 class="text-white">Masonry Blog Sidebar</h1>
-						
-					</div>
-				</div><!--end of row-->
-			</div><!--end of container-->
-		</header>
-			
 		<section class="blog-masonry bg-muted">
-		
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12 text-center">
@@ -30,12 +13,10 @@
 					</div>
 				</div><!--end of row-->
 			</div><!--end of container-->
-			
 			<div class="container">
 				<div class="row">
 					<div class="col-md-9">
 						<div class="blog-masonry-container">
-				
 							<div class="col-md-6 col-sm-6 blog-masonry-item branding">
 								<div class="item-inner">
 									<a href="blog-single.html">
@@ -54,7 +35,6 @@
 									</div>
 								</div>
 							</div><!--end of individual post-->
-					
 							<div class="col-md-6 col-sm-6 blog-masonry-item development">
 								<div class="item-inner quote-post">
 									<div class="post-title">
@@ -67,7 +47,6 @@
 									</div>
 								</div>
 							</div><!--end of individual post-->
-				
 							<div class="col-md-6 col-sm-6 blog-masonry-item development">
 								<div class="item-inner">
 									<a href="blog-single.html">
@@ -86,7 +65,6 @@
 									</div>
 								</div>
 							</div><!--end of individual post-->
-				
 							<div class="col-md-6 col-sm-6 blog-masonry-item print">
 								<div class="item-inner">
 									<a href="blog-single.html">

@@ -55316,33 +55316,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "main-container" }, [
-      _c("header", { staticClass: "page-header" }, [
-        _c(
-          "div",
-          { staticClass: "background-image-holder parallax-background" },
-          [
-            _c("img", {
-              staticClass: "background-image",
-              attrs: { alt: "Background Image", src: "img/hero23.jpg" }
-            })
-          ]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-12 text-center" }, [
-              _c("span", { staticClass: "text-white alt-font" }, [
-                _vm._v("news & Views ")
-              ]),
-              _vm._v(" "),
-              _c("h1", { staticClass: "text-white" }, [
-                _vm._v("Masonry Blog Sidebar")
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
       _c("section", { staticClass: "blog-masonry bg-muted" }, [
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [

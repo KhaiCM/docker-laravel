@@ -2192,10 +2192,10 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     console.log(this.$route.params.categoryName);
-    axios.get('http://127.0.0.1:8000/api/categories/' + this.$route.params.categoryId + '/topics').then(function (response) {
+    axios.get('/api/categories/' + this.$route.params.categoryId + '/topics').then(function (response) {
       _this.topics = response.data.data;
     });
-    $.get('http://127.0.0.1:8000/api/categories/' + this.$route.params.categoryId).done(function (response) {
+    $.get('/api/categories/' + this.$route.params.categoryId).done(function (response) {
       _this.category = response;
     });
   }
@@ -2231,7 +2231,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    axios.get('http://127.0.0.1:8000/api/categories/').then(function (response) {
+    axios.get('/api/categories/').then(function (response) {
       _this.categories = response.data;
     });
   }
@@ -72366,206 +72366,7 @@ function fromNow(time) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-/** Abstract base class for collection plugins v1.0.1.
-	Written by Keith Wood (kbwood{at}iinet.com.au) December 2013.
-	Licensed under the MIT (https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt) license. */
-(function () {
-  var j = false;
-
-  window.JQClass = function () {};
-
-  JQClass.classes = {};
-
-  JQClass.extend = function extender(f) {
-    var g = this.prototype;
-    j = true;
-    var h = new this();
-    j = false;
-
-    for (var i in f) {
-      h[i] = typeof f[i] == 'function' && typeof g[i] == 'function' ? function (d, e) {
-        return function () {
-          var b = this._super;
-
-          this._super = function (a) {
-            return g[d].apply(this, a || []);
-          };
-
-          var c = e.apply(this, arguments);
-          this._super = b;
-          return c;
-        };
-      }(i, f[i]) : f[i];
-    }
-
-    function JQClass() {
-      if (!j && this._init) {
-        this._init.apply(this, arguments);
-      }
-    }
-
-    JQClass.prototype = h;
-    JQClass.prototype.constructor = JQClass;
-    JQClass.extend = extender;
-    return JQClass;
-  };
-})();
-
-(function ($) {
-  JQClass.classes.JQPlugin = JQClass.extend({
-    name: 'plugin',
-    defaultOptions: {},
-    regionalOptions: {},
-    _getters: [],
-    _getMarker: function _getMarker() {
-      return 'is-' + this.name;
-    },
-    _init: function _init() {
-      $.extend(this.defaultOptions, this.regionalOptions && this.regionalOptions[''] || {});
-      var c = camelCase(this.name);
-      $[c] = this;
-
-      $.fn[c] = function (a) {
-        var b = Array.prototype.slice.call(arguments, 1);
-
-        if ($[c]._isNotChained(a, b)) {
-          return $[c][a].apply($[c], [this[0]].concat(b));
-        }
-
-        return this.each(function () {
-          if (typeof a === 'string') {
-            if (a[0] === '_' || !$[c][a]) {
-              throw 'Unknown method: ' + a;
-            }
-
-            $[c][a].apply($[c], [this].concat(b));
-          } else {
-            $[c]._attach(this, a);
-          }
-        });
-      };
-    },
-    setDefaults: function setDefaults(a) {
-      $.extend(this.defaultOptions, a || {});
-    },
-    _isNotChained: function _isNotChained(a, b) {
-      if (a === 'option' && (b.length === 0 || b.length === 1 && typeof b[0] === 'string')) {
-        return true;
-      }
-
-      return $.inArray(a, this._getters) > -1;
-    },
-    _attach: function _attach(a, b) {
-      a = $(a);
-
-      if (a.hasClass(this._getMarker())) {
-        return;
-      }
-
-      a.addClass(this._getMarker());
-      b = $.extend({}, this.defaultOptions, this._getMetadata(a), b || {});
-      var c = $.extend({
-        name: this.name,
-        elem: a,
-        options: b
-      }, this._instSettings(a, b));
-      a.data(this.name, c);
-
-      this._postAttach(a, c);
-
-      this.option(a, b);
-    },
-    _instSettings: function _instSettings(a, b) {
-      return {};
-    },
-    _postAttach: function _postAttach(a, b) {},
-    _getMetadata: function _getMetadata(d) {
-      try {
-        var f = d.data(this.name.toLowerCase()) || '';
-        f = f.replace(/'/g, '"');
-        f = f.replace(/([a-zA-Z0-9]+):/g, function (a, b, i) {
-          var c = f.substring(0, i).match(/"/g);
-          return !c || c.length % 2 === 0 ? '"' + b + '":' : b + ':';
-        });
-        f = $.parseJSON('{' + f + '}');
-
-        for (var g in f) {
-          var h = f[g];
-
-          if (typeof h === 'string' && h.match(/^new Date\((.*)\)$/)) {
-            f[g] = eval(h);
-          }
-        }
-
-        return f;
-      } catch (e) {
-        return {};
-      }
-    },
-    _getInst: function _getInst(a) {
-      return $(a).data(this.name) || {};
-    },
-    option: function option(a, b, c) {
-      a = $(a);
-      var d = a.data(this.name);
-
-      if (!b || typeof b === 'string' && c == null) {
-        var e = (d || {}).options;
-        return e && b ? e[b] : e;
-      }
-
-      if (!a.hasClass(this._getMarker())) {
-        return;
-      }
-
-      var e = b || {};
-
-      if (typeof b === 'string') {
-        e = {};
-        e[b] = c;
-      }
-
-      this._optionsChanged(a, d, e);
-
-      $.extend(d.options, e);
-    },
-    _optionsChanged: function _optionsChanged(a, b, c) {},
-    destroy: function destroy(a) {
-      a = $(a);
-
-      if (!a.hasClass(this._getMarker())) {
-        return;
-      }
-
-      this._preDestroy(a, this._getInst(a));
-
-      a.removeData(this.name).removeClass(this._getMarker());
-    },
-    _preDestroy: function _preDestroy(a, b) {}
-  });
-
-  function camelCase(c) {
-    return c.replace(/-([a-z])/g, function (a, b) {
-      return b.toUpperCase();
-    });
-  }
-
-  $.JQPlugin = {
-    createPlugin: function createPlugin(a, b) {
-      if (_typeof(a) === 'object') {
-        b = a;
-        a = 'JQPlugin';
-      }
-
-      a = camelCase(a);
-      var c = camelCase(b.name);
-      JQClass.classes[c] = JQClass.classes[a].extend(b);
-      new JQClass.classes[c]();
-    }
-  };
-})(jQuery);
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/home/ubuntu/blog_personal/resources/js/frontend/js/jquery.plugin.min.js'");
 
 /***/ }),
 
@@ -72587,8 +72388,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/chu.minh.khai/Desktop/blog_personal/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/chu.minh.khai/Desktop/blog_personal/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/ubuntu/blog_personal/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/ubuntu/blog_personal/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

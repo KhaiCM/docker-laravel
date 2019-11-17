@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1;
+namespace App\Http\Controllers;
 
-use App\Models\Post;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class BlogsController extends Controller
+class VatoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +13,7 @@ class BlogsController extends Controller
      */
     public function index()
     {
-        return Post::all();
+        return view('blog.home.index');
     }
 
     /**
@@ -36,8 +34,7 @@ class BlogsController extends Controller
      */
     public function store(Request $request)
     {
-        $company = Post::create($request->all());
-        return $company;
+        //
     }
 
     /**
@@ -48,7 +45,7 @@ class BlogsController extends Controller
      */
     public function show($id)
     {
-        return Post::findOrFail($id);
+        //
     }
 
     /**
@@ -71,10 +68,7 @@ class BlogsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $company = Post::findOrFail($id);
-        $company->update($request->all());
-
-        return $company;
+        //
     }
 
     /**
@@ -85,8 +79,6 @@ class BlogsController extends Controller
      */
     public function destroy($id)
     {
-        $company = Post::findOrFail($id);
-        $company->delete();
-        return '';
+        //
     }
 }

@@ -20,10 +20,10 @@ export default {
   },
   mounted () {
     console.log(this.$route.params.categoryName)
-    axios.get('http://127.0.0.1:8000/api/categories/' + this.$route.params.categoryId + '/topics').then((response) => {
+    axios.get('/api/categories/' + this.$route.params.categoryId + '/topics').then((response) => {
       this.topics = response.data.data;
     })
-    $.get('http://127.0.0.1:8000/api/categories/' + this.$route.params.categoryId).done((response) => {
+    $.get('/api/categories/' + this.$route.params.categoryId).done((response) => {
       this.category = response;
     })
   }

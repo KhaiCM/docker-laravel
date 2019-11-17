@@ -5,7 +5,10 @@
  */
 
 require('./bootstrap');
-require('./frontend/js/jquery.plugin.min.js');
+require('./frontend/js/clean-blog.js');
+require('./frontend/js/clean-blog.min.js');
+require('./frontend/js/contact_me.js');
+require('./frontend/js/jqBootstrapValidation.js');
 
 window.Vue = require('vue');
 import VueRouter from 'vue-router';

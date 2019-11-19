@@ -2192,10 +2192,17 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     console.log(this.$route.params.categoryName);
+<<<<<<< HEAD
     axios.get('/api/categories/' + this.$route.params.categoryId + '/topics').then(function (response) {
       _this.topics = response.data.data;
     });
     $.get('/api/categories/' + this.$route.params.categoryId).done(function (response) {
+=======
+    axios.get('http://127.0.0.1:8001/api/categories/' + this.$route.params.categoryId + '/topics').then(function (response) {
+      _this.topics = response.data.data;
+    });
+    $.get('http://127.0.0.1:8001/api/categories/' + this.$route.params.categoryId).done(function (response) {
+>>>>>>> ee68243f128d125a5d92ff874032e91190626858
       _this.category = response;
     });
   }
@@ -2231,7 +2238,11 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
+<<<<<<< HEAD
     axios.get('/api/categories/').then(function (response) {
+=======
+    axios.get('http://127.0.0.1:8001/api/categories/').then(function (response) {
+>>>>>>> ee68243f128d125a5d92ff874032e91190626858
       _this.categories = response.data;
     });
   }
@@ -55293,6 +55304,539 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/blogs/HomeIndex.vue?vue&type=template&id=16b0319a&":
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/blogs/HomeIndex.vue?vue&type=template&id=16b0319a& ***!
+  \******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "main-container" }, [
+      _c("section", { staticClass: "blog-masonry bg-muted" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-sm-12 text-center" }, [
+              _c("ul", { staticClass: "blog-filters" }, [
+                _c(
+                  "li",
+                  { staticClass: "active", attrs: { "data-filter": "*" } },
+                  [_vm._v("All")]
+                ),
+                _vm._v(" "),
+                _c("li", { attrs: { "data-filter": ".branding" } }, [
+                  _vm._v("Branding")
+                ]),
+                _vm._v(" "),
+                _c("li", { attrs: { "data-filter": ".development" } }, [
+                  _vm._v("Development")
+                ]),
+                _vm._v(" "),
+                _c("li", { attrs: { "data-filter": ".print" } }, [
+                  _vm._v("Print Design")
+                ])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-9" }, [
+              _c("div", { staticClass: "blog-masonry-container" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-md-6 col-sm-6 blog-masonry-item branding"
+                  },
+                  [
+                    _c("div", { staticClass: "item-inner" }, [
+                      _c("a", { attrs: { href: "blog-single.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            alt: "Blog Preview",
+                            src: "img/blog-masonry-1.jpg"
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "post-title" }, [
+                        _c("h2", [
+                          _vm._v(
+                            "Layout out my writing gear as though I'll use it."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t\t\t\tSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.\n\t\t\t\t\t\t\t\t\t"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "post-meta" }, [
+                          _c("span", { staticClass: "sub alt-font" }, [
+                            _vm._v("Posted on June 16th")
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "sub alt-font" }, [
+                            _vm._v("4 Minute Read")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            staticClass: "link-text",
+                            attrs: { href: "blog-single.html" }
+                          },
+                          [_vm._v("Read More")]
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "col-md-6 col-sm-6 blog-masonry-item development"
+                  },
+                  [
+                    _c("div", { staticClass: "item-inner quote-post" }, [
+                      _c("div", { staticClass: "post-title" }, [
+                        _c("h1", [
+                          _vm._v('"A camel is a horse designed by committee"')
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "post-meta" }, [
+                          _c("span", { staticClass: "sub alt-font" }, [
+                            _vm._v("Alec Issigonis")
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "sub alt-font" }, [
+                            _vm._v("1965")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            staticClass: "link-text",
+                            attrs: { href: "blog-single.html" }
+                          },
+                          [_vm._v("Read More")]
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "col-md-6 col-sm-6 blog-masonry-item development"
+                  },
+                  [
+                    _c("div", { staticClass: "item-inner" }, [
+                      _c("a", { attrs: { href: "blog-single.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            alt: "Blog Preview",
+                            src: "img/blog-masonry-2.jpg"
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "post-title" }, [
+                        _c("h2", [
+                          _vm._v(
+                            "Cooking up a batch of Ma's famous breadsticks"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t\t\t\tSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.\n\t\t\t\t\t\t\t\t\t"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "post-meta" }, [
+                          _c("span", { staticClass: "sub alt-font" }, [
+                            _vm._v("Posted on June 13th")
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "sub alt-font" }, [
+                            _vm._v("4 Minute Read")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            staticClass: "link-text",
+                            attrs: { href: "blog-single.html" }
+                          },
+                          [_vm._v("Read More")]
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "col-md-6 col-sm-6 blog-masonry-item print" },
+                  [
+                    _c("div", { staticClass: "item-inner" }, [
+                      _c("a", { attrs: { href: "blog-single.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            alt: "Blog Preview",
+                            src: "img/blog-masonry-3.jpg"
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "post-title" }, [
+                        _c("h2", [
+                          _vm._v("Wearing my trendy straw hat at the farm.")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t\t\t\tSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.\n\t\t\t\t\t\t\t\t\t"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "post-meta" }, [
+                          _c("span", { staticClass: "sub alt-font" }, [
+                            _vm._v("Posted on June 11th")
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "sub alt-font" }, [
+                            _vm._v("4 Minute Read")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            staticClass: "link-text",
+                            attrs: { href: "blog-single.html" }
+                          },
+                          [_vm._v("Read More")]
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-md-6 col-sm-6 blog-masonry-item branding"
+                  },
+                  [
+                    _c("div", { staticClass: "item-inner" }, [
+                      _c("a", { attrs: { href: "blog-single.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            alt: "Blog Preview",
+                            src: "img/blog-masonry-4.jpg"
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "post-title" }, [
+                        _c("h2", [
+                          _vm._v("Happy snaps in my hand-made raft at sunset")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t\t\t\tSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.\n\t\t\t\t\t\t\t\t\t"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "post-meta" }, [
+                          _c("span", { staticClass: "sub alt-font" }, [
+                            _vm._v("Posted on June 8th")
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "sub alt-font" }, [
+                            _vm._v("2 Minute Read")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            staticClass: "link-text",
+                            attrs: { href: "blog-single.html" }
+                          },
+                          [_vm._v("Read More")]
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "col-md-6 col-sm-6 blog-masonry-item print" },
+                  [
+                    _c("div", { staticClass: "item-inner" }, [
+                      _c("iframe", {
+                        attrs: {
+                          src:
+                            "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/154584032&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "post-title" }, [
+                        _c("h2", [_vm._v("Henry Saiz - Anubis")]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "post-meta" }, [
+                          _c("span", { staticClass: "sub alt-font" }, [
+                            _vm._v("Posted on June 11th")
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "sub alt-font" }, [
+                            _vm._v("4 Minute Read")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            staticClass: "link-text",
+                            attrs: { href: "blog-single.html" }
+                          },
+                          [_vm._v("Read More")]
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "col-md-6 col-sm-6 blog-masonry-item print" },
+                  [
+                    _c("div", { staticClass: "item-inner video-post" }, [
+                      _c("iframe", {
+                        attrs: {
+                          src: "http://player.vimeo.com/video/106181453"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "post-title" }, [
+                        _c("h2", [_vm._v("Vimeo Video Post")]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "post-meta" }, [
+                          _c("span", { staticClass: "sub alt-font" }, [
+                            _vm._v("Posted on June 3rd")
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "sub alt-font" }, [
+                            _vm._v("2 Minute Read")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            staticClass: "link-text",
+                            attrs: { href: "blog-single.html" }
+                          },
+                          [_vm._v("Read More")]
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "col-md-6 col-sm-6 blog-masonry-item development"
+                  },
+                  [
+                    _c("div", { staticClass: "item-inner video-post" }, [
+                      _c("iframe", {
+                        attrs: {
+                          src: "http://www.youtube.com/embed/VdEVhE4X6x0"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "post-title" }, [
+                        _c("h2", [_vm._v("Youtube Video Post")]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "post-meta" }, [
+                          _c("span", { staticClass: "sub alt-font" }, [
+                            _vm._v("Posted on June 3rd")
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "sub alt-font" }, [
+                            _vm._v("2 Minute Read")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            staticClass: "link-text",
+                            attrs: { href: "blog-single.html" }
+                          },
+                          [_vm._v("Read More")]
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-3" }, [
+              _c("div", { staticClass: "blog-sidebar" }, [
+                _c("div", { staticClass: "sidebar-widget" }, [
+                  _c("h5", [_vm._v("Categories")]),
+                  _vm._v(" "),
+                  _c("ul", [
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Web Design "),
+                        _c("i", { staticClass: "icon arrow_right" })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Photography "),
+                        _c("i", { staticClass: "icon arrow_right" })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Lifestyle "),
+                        _c("i", { staticClass: "icon arrow_right" })
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "sidebar-widget" }, [
+                  _c("h5", [_vm._v("Recent Posts")]),
+                  _vm._v(" "),
+                  _c("ul", [
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Discussing Web Trends "),
+                        _c("i", { staticClass: "icon arrow_right" })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Image Slider Post "),
+                        _c("i", { staticClass: "icon arrow_right" })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Soundcloud Embed Post "),
+                        _c("i", { staticClass: "icon arrow_right" })
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "sidebar-widget" }, [
+                  _c("h5", [_vm._v("Tags")]),
+                  _vm._v(" "),
+                  _c("ul", { staticClass: "tags" }, [
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Portfolio")])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Web Design")])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Photography")])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Responsive")])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Freebie")])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Variant")])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "sidebar-widget" }, [
+                  _c("h5", [_vm._v("Instagram")]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "instafeed",
+                      attrs: { "data-user-name": "behance" }
+                    },
+                    [_c("ul")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "sidebar-widget" }, [
+                  _c("h5", [_vm._v("Twitter")]),
+                  _vm._v(" "),
+                  _c("div", {
+                    attrs: {
+                      id: "tweets",
+                      "data-widget-id": "492085717044981760"
+                    }
+                  })
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/companies/CompaniesCreate.vue?vue&type=template&id=17843528&":
 /*!****************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/companies/CompaniesCreate.vue?vue&type=template&id=17843528& ***!
@@ -71507,14 +72051,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_home_CategoryView_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/home/CategoryView.vue */ "./resources/js/components/home/CategoryView.vue");
 /* harmony import */ var _components_home_TopicView_vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/home/TopicView.vue */ "./resources/js/components/home/TopicView.vue");
 /* harmony import */ var _components_NotFound_vue__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/NotFound.vue */ "./resources/js/components/NotFound.vue");
+/* harmony import */ var _components_blogs_HomeIndex_vue__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/blogs/HomeIndex.vue */ "./resources/js/components/blogs/HomeIndex.vue");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // require('./frontend/js/isotope.min');
+// require('./frontend/js/jquery.countdown.min');
+// require('./frontend/js/jquery.flexslider-min');
+// require('./frontend/js/jquery.min');
+// require('./frontend/js/jquery.plugin.min');
+// require('./frontend/js/lightbox.min');
+// require('./frontend/js/modernizr-2.6.2-respond-1.1.0.min');
+// require('./frontend/js/scripts');
+// require('./frontend/js/scrollReveal.min');
+// require('./frontend/js/skrollr.min');
+// require('./frontend/js/smooth-scroll.min');
+// require('./frontend/js/spectragram.min');
+// require('./frontend/js/twitterFetcher_v10_min');
 
-__webpack_require__(/*! ./frontend/js/jquery.plugin.min.js */ "./resources/js/frontend/js/jquery.plugin.min.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
@@ -71531,6 +72087,8 @@ window.Vue.filter('largeNumber', _filters_largeNumber__WEBPACK_IMPORTED_MODULE_3
 
 
 
+
+ //blog
 
 
 var routes = [{
@@ -71566,6 +72124,11 @@ var routes = [{
 }, {
   path: '*',
   component: _components_NotFound_vue__WEBPACK_IMPORTED_MODULE_11__["default"]
+}, //blog
+{
+  path: '/home',
+  name: 'Vato',
+  component: _components_blogs_HomeIndex_vue__WEBPACK_IMPORTED_MODULE_12__["default"]
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   routes: routes
@@ -71860,6 +72423,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Topic_vue_vue_type_template_id_2d05d358___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Topic_vue_vue_type_template_id_2d05d358___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/blogs/HomeIndex.vue":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/blogs/HomeIndex.vue ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _HomeIndex_vue_vue_type_template_id_16b0319a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HomeIndex.vue?vue&type=template&id=16b0319a& */ "./resources/js/components/blogs/HomeIndex.vue?vue&type=template&id=16b0319a&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _HomeIndex_vue_vue_type_template_id_16b0319a___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _HomeIndex_vue_vue_type_template_id_16b0319a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/blogs/HomeIndex.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/blogs/HomeIndex.vue?vue&type=template&id=16b0319a&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/blogs/HomeIndex.vue?vue&type=template&id=16b0319a& ***!
+  \************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeIndex_vue_vue_type_template_id_16b0319a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./HomeIndex.vue?vue&type=template&id=16b0319a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/blogs/HomeIndex.vue?vue&type=template&id=16b0319a&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeIndex_vue_vue_type_template_id_16b0319a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeIndex_vue_vue_type_template_id_16b0319a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -72359,6 +72975,7 @@ function fromNow(time) {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "./resources/js/frontend/js/jquery.plugin.min.js":
 /*!*******************************************************!*\
   !*** ./resources/js/frontend/js/jquery.plugin.min.js ***!
@@ -72370,6 +72987,8 @@ throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index
 
 /***/ }),
 
+=======
+>>>>>>> ee68243f128d125a5d92ff874032e91190626858
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!

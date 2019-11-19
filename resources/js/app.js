@@ -31,6 +31,8 @@ import HomeView from './components/home/HomeView.vue'
 import CategoryView from './components/home/CategoryView.vue'
 import TopicView from './components/home/TopicView.vue'
 import NotFound from './components/NotFound.vue'
+//blog
+import BlogHome from './components/blogs/HomeIndex.vue'
 
 
 const routes = [
@@ -50,7 +52,9 @@ const routes = [
     { path: '/homeview', name: 'Home', component: HomeView },
     { path: '/category/:categoryId', name: 'Category', component: CategoryView },
     { path: '/topic', name: 'Topic', component: TopicView },
-    { path: '*', component: NotFound }
+    { path: '*', component: NotFound },
+    //blog
+    { path: '/home', name: 'Vato', component: BlogHome}
 ]
 
 const router = new VueRouter({ routes })

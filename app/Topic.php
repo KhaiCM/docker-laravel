@@ -1,11 +1,11 @@
 <?php
 
-namespace App;
+namespace App/Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\User;
-use App\Category;
-use App\Comment;
+use App\Models\User;
+use App\Models\Category;
+use App\Models\Comment;
 
 class Topic extends Model
 {

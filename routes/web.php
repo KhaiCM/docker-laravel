@@ -25,9 +25,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 });
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/vato', 'VatoController@index')->name('vato.index');
+    Route::get('/vato/', 'VatoController@index')->name('vato.index');
 });
-
 
 Route::any('{all}', function () {
     return view('welcome');

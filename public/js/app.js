@@ -2192,10 +2192,17 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     console.log(this.$route.params.categoryName);
+<<<<<<< HEAD
+    axios.get('/api/categories/' + this.$route.params.categoryId + '/topics').then(function (response) {
+      _this.topics = response.data.data;
+    });
+    $.get('/api/categories/' + this.$route.params.categoryId).done(function (response) {
+=======
     axios.get('http://127.0.0.1:8001/api/categories/' + this.$route.params.categoryId + '/topics').then(function (response) {
       _this.topics = response.data.data;
     });
     $.get('http://127.0.0.1:8001/api/categories/' + this.$route.params.categoryId).done(function (response) {
+>>>>>>> ee68243f128d125a5d92ff874032e91190626858
       _this.category = response;
     });
   }
@@ -2231,7 +2238,11 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
+<<<<<<< HEAD
+    axios.get('/api/categories/').then(function (response) {
+=======
     axios.get('http://127.0.0.1:8001/api/categories/').then(function (response) {
+>>>>>>> ee68243f128d125a5d92ff874032e91190626858
       _this.categories = response.data;
     });
   }
@@ -72964,6 +72975,20 @@ function fromNow(time) {
 
 /***/ }),
 
+<<<<<<< HEAD
+/***/ "./resources/js/frontend/js/jquery.plugin.min.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/frontend/js/jquery.plugin.min.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/home/ubuntu/blog_personal/resources/js/frontend/js/jquery.plugin.min.js'");
+
+/***/ }),
+
+=======
+>>>>>>> ee68243f128d125a5d92ff874032e91190626858
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!

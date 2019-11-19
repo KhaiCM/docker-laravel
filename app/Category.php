@@ -1,9 +1,10 @@
 <?php
 
-namespace App;
+namespace App/Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Topic;
+use App\Models\Topic;
+use App\Models\Post;
 
 class Category extends Model
 {
@@ -18,5 +19,10 @@ class Category extends Model
     public function getNumberOfTopicsAttribute()
     {
         return $this->topics->count();
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
     }
 }

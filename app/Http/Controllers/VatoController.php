@@ -13,7 +13,7 @@ class VatoController extends Controller
      */
     public function index()
     {
-        return view('frontend.Blogs.index');
+        return view('blog.home.index');
     }
 
     /**

@@ -5,19 +5,10 @@
  */
 
 require('./bootstrap');
-// require('./frontend/js/isotope.min');
-// require('./frontend/js/jquery.countdown.min');
-// require('./frontend/js/jquery.flexslider-min');
-// require('./frontend/js/jquery.min');
-// require('./frontend/js/jquery.plugin.min');
-// require('./frontend/js/lightbox.min');
-// require('./frontend/js/modernizr-2.6.2-respond-1.1.0.min');
-// require('./frontend/js/scripts');
-// require('./frontend/js/scrollReveal.min');
-// require('./frontend/js/skrollr.min');
-// require('./frontend/js/smooth-scroll.min');
-// require('./frontend/js/spectragram.min');
-// require('./frontend/js/twitterFetcher_v10_min');
+require('./frontend/js/clean-blog.js');
+require('./frontend/js/clean-blog.min.js');
+require('./frontend/js/contact_me.js');
+require('./frontend/js/jqBootstrapValidation.js');
 
 window.Vue = require('vue');
 import VueRouter from 'vue-router';

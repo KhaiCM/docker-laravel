@@ -15,7 +15,7 @@
       }
     },
     mounted () {
-      axios.get('http://127.0.0.1:8001/api/categories/').then((response) => {
+      axios.get('/api/categories/').then((response) => {
             this.categories = response.data
         })
     }

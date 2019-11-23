@@ -34,29 +34,94 @@ import NotFound from './components/NotFound.vue'
 //blog
 import BlogHome from './components/blogs/HomeIndex.vue'
 
+import VatoHome from './components/blogs/HomeView.vue';
+import VatoBlogDetail from './components/blogs/BlogDetail.vue';
+import VatoBlogCreate from './components/blogs/CRUD/create.vue';
+import VatoBlogEdit from './components/blogs/CRUD/edit.vue';
+import VatoBlogCreateCategory from './components/blogs/category/create.vue';
+import VatoBlogEditCategory from './components/blogs/category/edit.vue';
+import VatoBlogIndexCategory from './components/blogs/category/index.vue';
 
-const routes = [
-    {
-        path: '/companies',
-        components: {
-            companiesIndex: CompaniesIndex
+
+const router = new VueRouter({
+    mode: 'history',
+    routes: [{
+            path: '/companies',
+            components: {
+                companiesIndex: CompaniesIndex
+            }
+        },
+        {
+            path: '/admin/companies/create',
+            component: CompaniesCreate,
+            name: 'createCompany'
+        },
+        {
+            path: '/admin/companies/edit/:id',
+            component: CompaniesEdit,
+            name: 'editCompany'
+        },
+        {
+            path: '/admin/blog/index',
+            components: {
+                blogIndex: BLogIndex
+            },
+        },
+        {
+            path: '/homeview',
+            name: 'Home',
+            component: HomeView
+        },
+        {
+            path: '/category/:categoryId',
+            name: 'Category',
+            component: CategoryView
+        },
+        {
+            path: '/topic',
+            name: 'Topic',
+            component: TopicView
+        },
+        {
+            path: '/vatohome',
+            name: 'Vato',
+            component: VatoHome
+        },
+        {
+            path: '/vatoblogdetail',
+            name: 'BlogDeatil',
+            component: VatoBlogDetail
+        },
+        {
+            path: '/vatoblog/create',
+            name: 'BlogCreate',
+            component: VatoBlogCreate
+        },
+        {
+            path: '/vatoblog/edit',
+            name: 'BlogEdit',
+            component: VatoBlogEdit
+        },
+        {
+            path: '/vatoblog/indexcategory',
+            name: 'BlogIndexCategory',
+            component: VatoBlogIndexCategory
+        },
+        {
+            path: '/vatoblog/createcategory',
+            name: 'BlogCreateCategory',
+            component: VatoBlogCreateCategory
+        },
+        {
+            path: '/vatoblog/editcategory',
+            name: 'BlogEditCategory',
+            component: VatoBlogEditCategory
+        },
+        {
+            path: '/test',
+            component: NotFound
         }
-    },
-    {path: '/admin/companies/create', component: CompaniesCreate, name: 'createCompany'},
-    {path: '/admin/companies/edit/:id', component: CompaniesEdit, name: 'editCompany'},
-    {
-    	path: '/admin/blog/index',
-    	components: {
-    		blogIndex: BLogIndex},
-    },
-    { path: '/homeview', name: 'Home', component: HomeView },
-    { path: '/category/:categoryId', name: 'Category', component: CategoryView },
-    { path: '/topic', name: 'Topic', component: TopicView },
-    { path: '*', component: NotFound },
-    //blog
-    { path: '/home', name: 'Vato', component: BlogHome}
-]
-
-const router = new VueRouter({ routes })
+    ]
+})
 
 const app = new Vue({ router }).$mount('#app')

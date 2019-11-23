@@ -9,7 +9,7 @@ use App\Models\Comment;
 
 class Post extends Model
 {
-    protected $fillable = ['name', 'address', 'website', 'email'];
+    protected $fillable = ['title', 'description', 'content', 'status', 'category_id'];
 
     public function category()
     {

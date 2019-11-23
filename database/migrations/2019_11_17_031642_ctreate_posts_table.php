@@ -18,8 +18,8 @@ class CtreatePostsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->text('content');
-            $table->string('status');
-            $table->string('image');
+            $table->string('status')->default(0);
+            $table->string('image')->nullable();
             $table->integer('category_id')->unsigned();
             $table->integer('views')->default(0);
             $table->timestamps();

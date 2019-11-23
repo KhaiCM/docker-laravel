@@ -1,6 +1,6 @@
 <?php
 
-namespace App/Models;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
@@ -21,6 +21,6 @@ class Comment extends Model
 
 	public function post()
 	{
-		retur $this->belongsTo(Post::class));
+		return $this->belongsTo(Post::class);
 	}
 }

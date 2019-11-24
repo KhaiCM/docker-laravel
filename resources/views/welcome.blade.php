@@ -1,7 +1,7 @@
 <html lang="vi VN">
     <head>
         <meta charset="utf-8">
-        <title>SPA Forum - Allaravel.com</title>
+        <title>BLog Personal</title>
 
         <!-- Main styles for this application -->
         <link href="{{ mix('css/app.css') }}" rel="stylesheet">

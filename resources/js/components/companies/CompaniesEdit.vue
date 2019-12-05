@@ -1,40 +1,41 @@
 <template>
     <div>
-        <div class="form-group">
-            <router-link to="/" class="btn btn-default">Back</router-link>
-        </div>
-
-        <div class="panel panel-default">
-            <div class="panel-heading">Create new company</div>
-            <div class="panel-body">
+        <div class="card card-default">
+            <div class="card-header">Create new company</div>
+            <div class="card-body">
                 <form v-on:submit="saveForm()">
                     <div class="row">
-                        <div class="col-xs-12 form-group">
-                            <label class="control-label">Company name</label>
-                            <input type="text" v-model="company.name" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 form-group">
-                            <label class="control-label">Company address</label>
-                            <input type="text" v-model="company.address" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 form-group">
-                            <label class="control-label">Company website</label>
-                            <input type="text" v-model="company.website" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 form-group">
-                            <label class="control-label">Company email</label>
-                            <input type="text" v-model="company.email" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 form-group">
-                            <button class="btn btn-success">Create</button>
+                        <div class="col-12 col-lg-6 offset-lg-3">
+                            <div class="row">
+                                <label class="col-4 text-right">Company name</label>
+                                <div class="col-8 form-group">
+                                    <input type="text" v-model="company.name" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-4 text-right">Company address</label>
+                                <div class="col-8 form-group">
+                                    <input type="text" v-model="company.address" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-4 text-right">Company website</label>
+                                <div class="col-8 form-group">
+                                    <input type="text" v-model="company.website" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-4 text-right">Company email</label>
+                                <div class="col-8 form-group">
+                                    <input type="text" v-model="company.email" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-8 offset-4 form-group">
+                                    <button class="btn btn-success rounded-pill">Create</button>
+                                    <router-link to="/companies" class="btn btn-secondary rounded-pill">Back</router-link>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -75,7 +76,7 @@
                 var newCompany = app.company;
                 axios.patch('/api/v1/companies/' + app.companyId, newCompany)
                     .then(function (resp) {
-                        app.$router.replace('/');
+                        app.$router.replace('/companies');
                     })
                     .catch(function (resp) {
                         console.log(resp);

@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="form-group">
-            <router-link to="/" class="btn btn-default">Back</router-link>
+            <router-link to="/companies" class="btn btn-secondary rounded-pill">Back</router-link>
         </div>
 
         <div class="card card-default">
@@ -36,7 +36,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-8 offset-4 form-group">
-                                    <button class="btn btn-success">Create</button>
+                                    <button class="btn btn-success rounded-pill">Create</button>
                                 </div>
                             </div>
                         </div>
@@ -62,11 +62,11 @@
         methods: {
             saveForm() {
                 event.preventDefault();
-                var app = this;
-                var newCompany = app.company;
+                let app = this;
+                let newCompany = app.company;
                 axios.post('/api/v1/companies', newCompany)
                     .then(function (resp) {
-                        app.$router.push({path: '/'});
+                        app.$router.push({path: '/companies'});
                     })
                     .catch(function (resp) {
                         console.log(resp);

@@ -29,6 +29,6 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
 Route::any('{all}', function () {
-    return view('welcome');
+    return view('admin.companies.index');
 })
 ->where(['all' => '.*']);

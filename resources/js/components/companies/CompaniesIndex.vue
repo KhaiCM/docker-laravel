@@ -1,11 +1,16 @@
 <template>
     <div>
-        <div class="form-group">
-            <router-link :to="{name: 'createCompany'}" class="btn btn-success">Create new company</router-link>
-        </div>
-
         <div class="card">
-            <div class="card-header">Companies list</div>
+            <div class="card-header">
+                <div class="row">
+                    <div class="col col-sm-6 col-md-6">
+                        <h3>Companies list</h3>
+                    </div>
+                    <div class="col col-sm-6 col-md-6">
+                        <router-link :to="{name: 'createCompany'}" class="btn btn-success rounded-pill float-right">Create new company</router-link>
+                    </div>
+                </div>
+            </div>
             <div class="card-body">
                 <table class="table table-bordered table-striped">
                     <thead>
@@ -14,21 +19,21 @@
                         <th>Address</th>
                         <th>Website</th>
                         <th>Email</th>
-                        <th width="100">&nbsp;</th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr v-for="company, index in companies">
+                    <tr v-for="(company, index) in companies" :key="index">
                         <td>{{ company.name }}</td>
                         <td>{{ company.address }}</td>
                         <td>{{ company.website }}</td>
                         <td>{{ company.email }}</td>
                         <td>
-                            <router-link :to="{name: 'editCompany', params: {id: company.id}}" class="btn btn-xs btn-default">
+                            <router-link :to="{name: 'editCompany', params: {id: company.id}}" class="btn btn-warning rounded-pill">
                                 Edit
                             </router-link>
                             <a href="#"
-                               class="btn btn-xs btn-danger"
+                               class="btn btn-xs btn-danger rounded-pill"
                                v-on:click="deleteEntry(company.id, index)">
                                 Delete
                             </a>
@@ -49,7 +54,7 @@
             }
         },
         mounted() {
-            var app = this;
+            var app = this
             axios.get('/api/v1/companies')
                 .then(function (resp) {
                     app.companies = resp.data;

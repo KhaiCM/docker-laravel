@@ -1,0 +1,58 @@
+version: "3.1"
+
+services:
+  workspace:
+    container_name: workspaces
+    restart: always
+    build:
+      context: ./docker/workspace
+    image: thinhhung/laravel-workspace:7.3-oci8
+    volumes:
+      - ./laravel:/var/www/laravel
+    tty: true
+  php-fpm:
+    container_name: php-fpms
+    restart: always
+    build:
+      context: ./docker/php-fpm
+    image: thinhhung/laravel-php-fpm:7.3-oci8
+    volumes:
+      - ./laravel:/var/www/laravel
+    expose:
+      - "9000"
+    depends_on:
+      - workspace
+  nginx:
+    container_name: nginxs
+    restart: always
+    build:
+      context: ./docker/nginx
+    image: thinhhung/laravel-nginx:https
+    volumes:
+      - ./laravel:/var/www/laravel
+      - .docker/logs/nginx:/var/log/nginx
+    ports:
+      - "8000:80"
+      - "8003:443"
+    depends_on:
+      - php-fpm
+  mysql:
+    container_name: mysqls
+    restart: always
+    image: mysql:5.7
+    expose:
+      - "3306"
+    environment:
+      MYSQL_DATABASE: homestead
+      MYSQL_USER: homestead
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - .docker/mysql:/var/lib/mysql
+      - .docker/data:/data
+  adminer:
+    container_name: adminers
+    image: adminer:latest
+    restart: always
+    ports:
+      - "8080:8080"

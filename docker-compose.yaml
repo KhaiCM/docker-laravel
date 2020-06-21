@@ -1,8 +1,15 @@
 version: "3.1"
 
 services:
+  # ci:
+  #   container_name: line_chatbot_ci
+  #   restart: always
+  #   image: thinhhung/laravel-workspace:php7.2
+  #   volumes:
+  #     - ./:/var/www/laravel
+  #   tty: true
   workspace:
-    container_name: workspaces
+    container_name: workspace
     restart: always
     build:
       context: ./docker/workspace
@@ -11,7 +18,7 @@ services:
       - ./laravel:/var/www/laravel
     tty: true
   php-fpm:
-    container_name: php-fpms
+    container_name: php-fpm
     restart: always
     build:
       context: ./docker/php-fpm
@@ -23,21 +30,21 @@ services:
     depends_on:
       - workspace
   nginx:
-    container_name: nginxs
+    container_name: nginx
     restart: always
-    build:
-      context: ./docker/nginx
-    image: thinhhung/laravel-nginx:https
+    # build:
+    #   context: ./docker/nginx
+    image: framgia/laravel-nginx
     volumes:
       - ./laravel:/var/www/laravel
       - .docker/logs/nginx:/var/log/nginx
     ports:
       - "8000:80"
-      - "8003:443"
+      # - "8003:443"
     depends_on:
       - php-fpm
   mysql:
-    container_name: mysqls
+    container_name: mysql
     restart: always
     image: mysql:5.7
     expose:
@@ -50,9 +57,64 @@ services:
     volumes:
       - .docker/mysql:/var/lib/mysql
       - .docker/data:/data
+  # mysql_test:
+  #   container_name: line_chatbot_mysql_test
+  #   restart: always
+  #   image: mysql:5.7
+  #   expose:
+  #     - "3306"
+  #   environment:
+  #     MYSQL_DATABASE: homestead_test
+  #     MYSQL_USER: homestead_test
+  #     MYSQL_PASSWORD: secret
+  #     MYSQL_ROOT_PASSWORD: root
+  #   volumes:
+  #     - .docker/mysql_test:/var/lib/mysql
+  #     - .docker/data_test:/data
   adminer:
-    container_name: adminers
+    container_name: adminer
     image: adminer:latest
     restart: always
     ports:
       - "8080:8080"
+  redis:
+    container_name: redis
+    restart: always
+    image: redis
+    expose:
+      - "6379"
+  # node:
+  #   container_name: line_chatbot_node
+  #   image: nodejs-mongodb-api
+  #   build: ./express
+  #   environment:
+  #     NODE_ENV: production
+  #   ports:
+  #     - 3000:3000
+  #   tty: true
+  #   volumes:
+  #     - ./express:/usr/src/app
+  #   depends_on:
+  #     - mongo
+  #   links:
+  #     - mongo
+  # mongo:
+  #   container_name: line_chatbot_mongo
+  #   image: mongo
+  #   restart: always
+  #   expose:
+  #     - 27017
+  #   environment:
+  #     MONGO_INITDB_ROOT_USERNAME: root
+  #     MONGO_INITDB_ROOT_PASSWORD: root
+  #   volumes:
+  #     - .docker/mongo:/data/db
+  # mongo-express:
+  #   container_name: line_chatbot_mongo_express
+  #   image: mongo-express
+  #   restart: always
+  #   ports:
+  #     - 8081:8081
+  #   environment:
+  #     ME_CONFIG_MONGODB_ADMINUSERNAME: root
+  #     ME_CONFIG_MONGODB_ADMINPASSWORD: root
